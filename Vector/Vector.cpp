@@ -131,6 +131,39 @@ void Vector<T>::clear()
 }
 
 template<class T>
+T Vector<T>::getElement(int index)
+{
+	return this->_data[index];
+}
+
+template<class T>
+void Vector<T>::setElement(T element,int index)
+{
+	this->_data[index] = element;
+}
+
+template<class T>
+Vector<T> Vector<T>::sort()
+{
+	T temp;
+	for (int i = 0; i < this->_size - 1; i++)
+	{
+		for (int j = i + 1; j < this->_size; j++)
+		{
+			if (this->_data[j] < this->_data[i])
+			{
+				 temp= this->_data[j];
+				 this->_data[j] = this->_data[i];
+				 this->_data[i] = temp;
+			}
+		}
+	}
+	return *this;
+}
+
+
+
+template<class T>
 T& Vector<T>::operator[](int index)
 {
 	return _data[index];

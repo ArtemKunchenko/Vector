@@ -19,8 +19,12 @@ public:
 	void pop_back(); // remove the last element
 	int size(); //return size
 	void clear();
+	T getElement(int index);
+	void setElement(T element, int index);
+	Vector sort();
 	T& operator[] (int index);
 private:
 	T* _data;
 	int _size;
 };
+
